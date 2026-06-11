@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dksg7xg2uxxyp"]
+
+[ext_resource type="Script" uid="uid://bmfx3mixeb6ob" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dtuhw2fdrctvk" path="res://coin.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://170wt2mk8hfi" path="res://player.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b43msd40xs1io" path="res://powerup.tscn" id="3_kek77"]
+[ext_resource type="Texture2D" uid="uid://cqxinuahecya8" path="res://assets/grass.png" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://dwlvtnmhwaabj" path="res://hud.tscn" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://cqy4j3vjhptqr" path="res://assets/audio/Coin.wav" id="6_5vw27"]
+[ext_resource type="AudioStream" uid="uid://bcr7bvceamab6" path="res://assets/audio/Level.wav" id="7_kek77"]
+[ext_resource type="AudioStream" uid="uid://dq7tel028h4ab" path="res://assets/audio/EndSound.wav" id="8_4c57u"]
+[ext_resource type="AudioStream" uid="uid://b4243468n4suf" path="res://assets/audio/Powerup.wav" id="10_4c57u"]
+
+[node name="main" type="Node" unique_id=7116807]
+script = ExtResource("1_1bvp3")
+coin_scene = ExtResource("2_lquwl")
+powerup_scene = ExtResource("3_kek77")
+level_time_bonus = 5
+powerup_time_bonus = 4
+
+[node name="Background" type="TextureRect" parent="." unique_id=787605479]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_272bh")
+stretch_mode = 1
+
+[node name="player" parent="." unique_id=603108731 instance=ExtResource("3_7mycd")]
+speed = 300
+
+[node name="GameTimer" type="Timer" parent="." unique_id=2143923253]
+
+[node name="hud" parent="." unique_id=962392157 instance=ExtResource("5_lquwl")]
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=1828466687]
+stream = ExtResource("6_5vw27")
+volume_db = -13.747
+
+[node name="LevelSound" type="AudioStreamPlayer" parent="." unique_id=1408670623]
+stream = ExtResource("7_kek77")
+volume_db = -11.954
+
+[node name="EndSound" type="AudioStreamPlayer" parent="." unique_id=1854982185]
+stream = ExtResource("8_4c57u")
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="." unique_id=1520563652]
+stream = ExtResource("10_4c57u")
+volume_db = -7.173
+
+[node name="PowerupTimer" type="Timer" parent="." unique_id=955316936]
+one_shot = true
+
+[connection signal="hurt" from="player" to="." method="_on_player_hurt"]
+[connection signal="pickup" from="player" to="." method="_on_player_pickup"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="start_game" from="hud" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="PowerupTimer" to="." method="_on_powerup_timer_timeout"]

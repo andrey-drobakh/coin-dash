@@ -1,0 +1,26 @@
+		Coin Dash Game Project	
+		Notes
+
+
+How the app works :
+1. User runs app;
+2. HUD screen appears;
+3. User presses Start button, game begins;
+4. User is playing...;
+5. Game Over screen appears;
+6. Again, from 3 to 5;
+
+
+Features to add (10.06.2026):
+- [UI] start game on Enter pressed;
+- [UI] "Quit" button or another possibility to exit the game;
+- [UI] pause game;
+- [Gameplay] player acceleration, like nitro power
+  on Space key pressed;
+- [Gameplay] obstacles, like a cactus;
+
+
+
+
+
+

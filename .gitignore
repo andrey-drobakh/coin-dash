@@ -1,0 +1,8 @@
+# Godot-specific files
+.godot/
+*.translation
+
+# System & Editor specific files
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,30 @@
+		Coin Dash Game Project	
+		Development Notes
+
+
+Main Scene (Node) :
+- Player (Area2D)
+- Hud (CanvasLayer)
+
+
+Some steps of what happens :
+1. Start button pressed;
+2. hud._on_start_button_pressed called;
+3. hud.start_game signal emitted;
+4. main._on_hud_start_game called;
+5. main.init_game called;
+6. main.GameTimer started;
+7. After 1 second: main._on_game_timer_timeout called;
+   It's called repeatedly every second because the
+   main.GameTimer restarts automatically;
+8. hud.update_timer called and then maybe main.game_over;
+
+
+
+
+
+
+
+
+
+
