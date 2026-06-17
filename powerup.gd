@@ -16,3 +16,9 @@ func disappear() :
 
 func _on_lifetimer_timeout() -> void:
 	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group( "obstacles" ) :
+		position = Vector2( randi_range( 0, screensize.x ), randi_range( 0, screensize.y ) )
+

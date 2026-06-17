@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bcr7bvceamab6" path="res://assets/audio/Level.wav" id="7_kek77"]
 [ext_resource type="AudioStream" uid="uid://dq7tel028h4ab" path="res://assets/audio/EndSound.wav" id="8_4c57u"]
 [ext_resource type="AudioStream" uid="uid://b4243468n4suf" path="res://assets/audio/Powerup.wav" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bb5200wtsoufw" path="res://cactus.tscn" id="11_efxa6"]
 
 [node name="main" type="Node" unique_id=7116807]
 script = ExtResource("1_1bvp3")
@@ -29,6 +30,12 @@ stretch_mode = 1
 
 [node name="player" parent="." unique_id=603108731 instance=ExtResource("3_7mycd")]
 speed = 300
+
+[node name="Cactus" parent="." unique_id=1134247809 groups=["obstacles"] instance=ExtResource("11_efxa6")]
+position = Vector2(119, 189)
+
+[node name="Cactus2" parent="." unique_id=12403475 groups=["obstacles"] instance=ExtResource("11_efxa6")]
+position = Vector2(346, 437)
 
 [node name="GameTimer" type="Timer" parent="." unique_id=2143923253]
 
