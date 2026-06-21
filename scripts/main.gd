@@ -1,6 +1,5 @@
 extends Node
 
-
 @export var coin_scene : PackedScene
 @export var powerup_scene : PackedScene
 @export var playtime = 30
@@ -21,7 +20,7 @@ func _ready() :
 
 
 func _process( _delta ) :
-	if playing and get_tree().get_nodes_in_group( "coins" ).size() == 0 :
+	if playing and get_tree().get_nodes_in_group("coins").size() == 0 :
 		level += 1
 		timeleft += level_time_bonus
 		spawn_coins()
@@ -50,7 +49,7 @@ func spawn_coins() :
 		add_child( c )
 		
 		c.screensize = screensize
-		c.position = Vector2( randi_range( 0, screensize.x ), randi_range( 0, screensize.y ) )
+		c.position = Vector2(randi_range(0, screensize.x ), randi_range(0, screensize.y))
 
 
 func game_over() :
@@ -64,7 +63,7 @@ func game_over() :
 
 func _on_game_timer_timeout() -> void:
 	timeleft -= 1
-	$hud.update_timer( timeleft )
+	$hud.update_timer(timeleft)
 	
 	if timeleft <= 0 :
 		game_over()
@@ -79,24 +78,26 @@ func _on_player_pickup( type ) -> void:
 		"coin" :
 			$CoinSound.play()
 			score += 1
-			$hud.update_score( score )
+			$hud.update_score(score)
 		"powerup" :
 			$PowerupSound.play()
 			timeleft += powerup_time_bonus
-			$hud.update_timer( timeleft )
+			$hud.update_timer(timeleft)
 
 
 func _on_hud_start_game() -> void:
 	init_game()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("start"):
+	if event.is_action_pressed("start") and not playing:
+		$hud/Message.hide()
+		$hud/StartButton.hide()
 		init_game()
 
 
 func _on_powerup_timer_timeout() -> void:
 	var p = powerup_scene.instantiate()
-	add_child( p )
+	add_child(p)
 	
 	p.screensize = screensize
-	p.position = Vector2( randi_range( 0, screensize.x ), randi_range( 0, screensize.y ) )
+	p.position = Vector2(randi_range(0, screensize.x), randi_range(0, screensize.y))
