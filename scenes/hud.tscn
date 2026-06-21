@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwlvtnmhwaabj"]
 
 [ext_resource type="FontFile" uid="uid://c751au7dd6ipw" path="res://assets/Kenney Bold.ttf" id="1_37p78"]
-[ext_resource type="Script" uid="uid://bqwml512qvysg" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="Script" uid="uid://bqwml512qvysg" path="res://scripts/hud.gd" id="1_64ctp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
 font = ExtResource("1_37p78")

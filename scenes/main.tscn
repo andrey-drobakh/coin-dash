@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dksg7xg2uxxyp"]
 
-[ext_resource type="Script" uid="uid://bmfx3mixeb6ob" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dtuhw2fdrctvk" path="res://coin.tscn" id="2_lquwl"]
-[ext_resource type="PackedScene" uid="uid://170wt2mk8hfi" path="res://player.tscn" id="3_7mycd"]
-[ext_resource type="PackedScene" uid="uid://b43msd40xs1io" path="res://powerup.tscn" id="3_kek77"]
+[ext_resource type="Script" uid="uid://bmfx3mixeb6ob" path="res://scripts/main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dtuhw2fdrctvk" path="res://scenes/coin.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://170wt2mk8hfi" path="res://scenes/player.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b43msd40xs1io" path="res://scenes/powerup.tscn" id="3_kek77"]
 [ext_resource type="Texture2D" uid="uid://cqxinuahecya8" path="res://assets/grass.png" id="4_272bh"]
-[ext_resource type="PackedScene" uid="uid://dwlvtnmhwaabj" path="res://hud.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dwlvtnmhwaabj" path="res://scenes/hud.tscn" id="5_lquwl"]
 [ext_resource type="AudioStream" uid="uid://cqy4j3vjhptqr" path="res://assets/audio/Coin.wav" id="6_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bcr7bvceamab6" path="res://assets/audio/Level.wav" id="7_kek77"]
 [ext_resource type="AudioStream" uid="uid://dq7tel028h4ab" path="res://assets/audio/EndSound.wav" id="8_4c57u"]
 [ext_resource type="AudioStream" uid="uid://b4243468n4suf" path="res://assets/audio/Powerup.wav" id="10_4c57u"]
-[ext_resource type="PackedScene" uid="uid://bb5200wtsoufw" path="res://cactus.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://bb5200wtsoufw" path="res://scenes/cactus.tscn" id="11_efxa6"]
 
 [node name="main" type="Node" unique_id=7116807]
 script = ExtResource("1_1bvp3")

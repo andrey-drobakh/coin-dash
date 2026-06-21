@@ -89,6 +89,10 @@ func _on_player_pickup( type ) -> void:
 func _on_hud_start_game() -> void:
 	init_game()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("start"):
+		init_game()
+
 
 func _on_powerup_timer_timeout() -> void:
 	var p = powerup_scene.instantiate()
